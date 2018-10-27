@@ -24,4 +24,4 @@ $ git clone git@github.com:andhikayuana/simple-synthesizer.git
 
 ## Download
 
-You can try this App by download using [this link](simple-synthesizer-debug.apk)
+You can try this App by download using [this link](https://github.com/andhikayuana/simple-synthesizer/raw/master/simple-synthesizer-debug.apk)
