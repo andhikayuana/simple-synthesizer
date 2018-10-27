@@ -1,12 +1,40 @@
 #include <jni.h>
-#include <string>
 
-#include <oboe/Oboe.h>
+#include "AudioEngine.h"
 
-extern "C" JNIEXPORT jstring JNICALL
-Java_id_yuana_simple_synthesizer_MainActivity_stringFromJNI(
+static AudioEngine audioEngine;
+
+extern "C" JNIEXPORT void JNICALL
+Java_id_yuana_simple_synthesizer_ui_MainActivity_initAudioEngine(
         JNIEnv *env,
         jobject /* this */) {
-    std::string hello = "Hello from C++ Yuana";
-    return env->NewStringUTF(hello.c_str());
+
+    audioEngine.start();
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_id_yuana_simple_synthesizer_ui_MainActivity_setToneOn(
+        JNIEnv *env,
+        jobject instance,
+        jboolean isToneOn) {
+
+    audioEngine.setToneOn(isToneOn);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_id_yuana_simple_synthesizer_ui_MainActivity_setDefaultSampleRate(
+        JNIEnv *env,
+        jobject instance,
+        jint sampleRate
+) {
+    DefaultStreamValues::SampleRate = (int32_t) sampleRate;
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_id_yuana_simple_synthesizer_ui_MainActivity_setDefaultFramesPerBurst(
+        JNIEnv *env,
+        jobject instance,
+        jint framesPerBurst
+) {
+    DefaultStreamValues::FramesPerBurst = (int32_t) framesPerBurst;
 }

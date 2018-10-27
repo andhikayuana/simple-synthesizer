@@ -16,8 +16,9 @@ include_directories (${OBOE_DIR}/include)
 set (APP_DIR src/main/cpp)
 file (
     GLOB_RECURSE APP_SOURCES
-    ${APP_DIR}/native-lib.cpp
     ${APP_DIR}/Oscillator.cpp
+    ${APP_DIR}/AudioEngine.cpp
+    ${APP_DIR}/native-lib.cpp
 )
 
 # Build the native-lib library
@@ -52,4 +53,5 @@ target_link_libraries( # Specifies the target library.
         ${log-lib}
 
         #oboe
-        oboe)
+        oboe
+        OpenSLES)

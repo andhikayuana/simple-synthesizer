@@ -5,9 +5,9 @@
 #include "Oscillator.h"
 #include <math.h>
 
-#define TWO_PI (3.14159 * 2)
-#define AMPLITUDE 0.3
-#define FREQUENCY 440.0
+#define TWO_PI (M_PI * 2)
+#define AMPLITUDE 20
+#define FREQUENCY 261.62 // C4 Tone
 
 void Oscillator::setWaveOn(bool isWaveOn) {
     isWaveOn_.store(isWaveOn);
@@ -25,7 +25,7 @@ void Oscillator::render(float *audioData, int32_t numFrames) {
 
         if (isWaveOn_.load()) {
 
-            //calculate sine sample
+            //calculate sample
             audioData[i] = (float) (sin(phase_) * AMPLITUDE);
 
             //increment phase
