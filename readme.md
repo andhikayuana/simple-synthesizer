@@ -21,3 +21,7 @@ $ git clone git@github.com:andhikayuana/simple-synthesizer.git
 2. Open `simple-synthesizer` project in Android Studio
 3. After finish building and indexing, Run the App
 4. If you see some error, please report to issue
+
+## Download
+
+You can try this App by download using [this link](simple-synthesizer-debug.apk)
